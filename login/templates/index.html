@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   
+    {% load static %}
+    <!-- CSS CUSTOM -->
+    <link rel="stylesheet" href='{% static "index.css" %}'>
+    <script src = '{% static "index.js" %}'></script>
+    <link rel="stylesheet" href='{% static "alert.css" %}'>
+    <script src = '{% static "alert.js" %}'></script>
+
+    <title>Log In</title>
+</head>
+
+<body>
+
+    {% for msg in messages %}
+        <div id="alert" class="alert alert-primary" role="alert">
+            {{msg}}
+        </div>
+    {% endfor %}
+
+
+    <nav class="navbar sticky-top navbar-dark" id="dboard">
+        <div class="container-fluid">
+            <a href="" class="navbar-brand"><b>SaveMe</b></a>
+        </div>
+    </nav>
+
+
+    <form action="loginuser" method="POST">
+        {% csrf_token %}
+        <div class="block">
+            <div id="innerblock">
+                <h2 style="text-align: center;">Log In</h2>
+
+                <div class="form-group">
+
+                    <label>Username</label>
+                    <input type="text" name="username" id="email" class="form-control" placeholder="Enter Username">
+                    
+                    <br>
+                    <label>Password</label>
+                    <input type="password" name = "password" class="form-control" id="pass" placeholder="Password" required>
+
+                    <input class="form-check-label" type="checkbox" id="passcheck" onclick="showpassword();"> <small>Click To View Password</small>
+                    <br><br>
+                    
+
+                    <div id="submit">
+                        <button class="btn btn-primary" type="submit">Continue</button>
+                    </div>
+            </div>
+        </div>
+    </form>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+#form input, button{
+    padding: 10px;
+    margin: 10px;
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+}

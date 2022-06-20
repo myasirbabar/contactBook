@@ -1,0 +1,54 @@
+html{
+    background-color: rgb(21, 8, 59);
+}
+#dboard {
+    background-color: rgb(21, 8, 59);
+    color: white;
+
+    position: fixed;
+}
+.block{
+    height: 620px; /*FOR DISPLAYING DIV IN CENTER OF SCREEN (JUSTIFY-CONTENT)*/
+    display: flex; 
+    flex-direction: column; /*COLUMN TYPE DISPLAY OF FLEX*/
+    justify-content: center;/*DISPLAY ITEMS IN CENTER WRT TO HEIGHT (TOP & BOTTOM)*/
+    align-items: center; /*ALIGN ITEMS IN CENTER WRT LEFT RIGHT*/
+
+    background-color: rgb(21, 8, 59);
+
+    /*
+        IF FLEX DIRECTION IS COLUMN 
+            -> JUSTIFY CONTENT DISPLAY ITEMS WRT HEIGHT
+            -> ALIGN ITEMS DISPLAY ITEMS WRT LEFT/RIGHT 
+        
+        IF FLEX DIRECTION IS ROW 
+            -> JUSTIFY CONTENT DISPLAY ITEMS WRT LEFT/RIGHT
+            -> ALIGN ITEMS DISPLAY ITEMS WRT HEIGHT
+    */    
+}
+#innerblock{
+
+    /* background-color: whitesmoke; */
+    background-color: #0a0614;
+    color: white;
+
+    width: 450px;
+    padding: 20px;
+    border-radius: 5px;
+    border-radius: 2%;
+    border:1px solid black;
+    box-shadow: 0 0 2px black;
+}
+#submit{
+    text-align: center;
+}
+#submit button{
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+}
+#submit button:hover{
+    color: black;
+    background-color: white; 
+  
+}

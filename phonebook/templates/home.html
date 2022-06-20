@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% include 'head.html' %}
+
+    <title>Home Page</title>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    {% if not contacts %}
+        <h1>No contacts Exists</h1>
+
+    {% else %}
+        <h1>All Contacts</h1>
+        <table class="table table-dark">
+            <thead>
+                <th scope="col" >Serial</th>
+                <th scope="col" >Name</th>
+                <th scope="col" >Number</th>
+                <th scope="col" >Email</th>
+                <th scope="col" >Address</th>
+                <th scope="col" >Update</th>
+                <th scope="col" >Delete</th>
+
+            </thead>
+            <tbody>
+            {% for c in contacts %}
+                <tr scope="row">
+                    <td>{{forloop.counter}}</td>
+                    <td>{{c.contactname|capfirst}}</td>
+                    <td>{{c.number}}</td>
+                    <td><a href = "mailto://{{c.email}}">{{c.email}}</a></td>
+                    <td>{{c.address}}</td>
+                    <td><a href="{{c.get_abs_update_path }}">Update</a></td>
+                    <td><a href="{{c.get_abs_delete_path }}">Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        
+    {% endif %}
+
+</body>
+</html>

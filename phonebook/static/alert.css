@@ -1,0 +1,7 @@
+#alert {
+    top: 0px;
+    position: absolute;
+    z-index: 200000;
+    width: 100%;
+    text-align: center;
+}
